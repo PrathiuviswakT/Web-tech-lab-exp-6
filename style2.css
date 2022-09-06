@@ -1,0 +1,19 @@
+
+button{
+    margin: 100px;
+    padding: 20px;
+}
+#danger{
+    float: right;
+    width: 100px;
+    height: 400px;
+    background-color: blue;
+}
+#box{
+    width: 1600px;
+    height: 400px;
+    background-color: aliceblue;
+}
+#car{
+    padding-top: 100px;
+}
