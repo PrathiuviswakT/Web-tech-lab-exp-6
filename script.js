@@ -46,10 +46,10 @@ function reset(){
 
 var names =[];
 var num=[];
+
 function add(){
      var nameinput = document.getElementById("add").value ;
      var number    = document.getElementById("num").value ;
-     var len =names.length;
     //  names.push(nameinput);
     //  num.push(number);
     //  view();
@@ -58,32 +58,62 @@ function add(){
         num.push(number);
         view(); 
     }
-    else {
-        for(var a=0;a<len;a++){
+    else 
+    {
+        for(var a=0;a<names.length;a++)
+        {
             var x = names[a];
             var y = num[a];
-        if(y == number || x == nameinput){
-            if (x == nameinput){
-                
-                alert("contact name  already exists \n"+names[a]+" - "+num[a]);
-                
-            }
-            else ( y == number)
-            {
+            var c=0;
+            // if(y == number || x == nameinput)
+            // {
+            //     c=1;
+            //     if (x == nameinput)
+            //     {
                     
-                alert("contact  number already exists \n"+names[a]+" - "+num[a]);
+            //         alert("contact name  already exists \n"+names[a]+" - "+num[a]);
+                    
+            //     }
+            //     else ( y == number)
+            //     {
+                        
+            //         alert("contact  number already exists \n"+names[a]+" - "+num[a]);
+                    
+            //     }
+            // }   
+            // else if(c==0){
+            //     names.push(nameinput);
+            //     num.push(number);
+            //     view();
+            // }
+            while(c==0)
+            {
+                if (x == nameinput)
+                    {
+                        
+                        alert("contact name  already exists \n"+names[a]+" - "+num[a]);
+                        c=1
+                    }
+                else if ( y == number)
+                    {
+                            
+                        alert("contact  number already exists \n"+names[a]+" - "+num[a]);
+                        c=1
+                    }
                 
+                else if (c==0)
+                {
+                    names.push(nameinput);
+                    num.push(number);
+                    view();
+                    break;
+                }
             }
-        }   
-        else{
-             names.push(nameinput);
-             num.push(number);
-             view();
-             break ;
-        }
+            if(c==1){
+                break;
+            } 
         }
     }
-    
 }
 function firstremove(){
     names.shift();
