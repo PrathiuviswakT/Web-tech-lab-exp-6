@@ -93,12 +93,14 @@ function add(){
                         
                         alert("contact name  already exists \n"+names[a]+" - "+num[a]);
                         c=1
+                        break;
                     }
                 else if ( y == number)
                     {
                             
                         alert("contact  number already exists \n"+names[a]+" - "+num[a]);
                         c=1
+                        break;
                     }
                 
                 else if (c==0)
