@@ -58,25 +58,28 @@ function add(){
         num.push(number);
         view(); 
     }
-    else{
+    else {
         for(var a=0;a<len;a++){
             var x = names[a];
             var y = num[a];
-        
-        if (x == nameinput){
+        if(y == number || x == nameinput){
+            if (x == nameinput){
                 
-            alert("contact name  already exists \n"+names[a]+" - "+num[a]);
-            break ;
-        }
-        else if ( y == number){
+                alert("contact name  already exists \n"+names[a]+" - "+num[a]);
                 
-            alert("contact  number already exists \n"+names[a]+" - "+num[a]);
-            break ;
-        }
+            }
+            else ( y == number)
+            {
+                    
+                alert("contact  number already exists \n"+names[a]+" - "+num[a]);
+                
+            }
+        }   
         else{
              names.push(nameinput);
              num.push(number);
              view();
+             break ;
         }
         }
     }
