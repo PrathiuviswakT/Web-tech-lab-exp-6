@@ -16,19 +16,21 @@ function  change(){
 }
 
 
-var car = null;
+var bike = null;
 var timer = null;
 function init(){
-    car = document.getElementById('car')
-    car.style.position = "relative";
-    car.style.left ="2px";
+    bike = document.getElementById('bike')
+    bike.style.position = "relative";
+    bike.style.left ="0%";
 }
 
 function move(){
-    car.style.left= parseInt(car.style.left) + 2 + "px"
+    bike.style.left= parseInt(bike.style.left) + 1 + "%"
     timer = setTimeout(move,100)
-    if(x >= 1500){
-        document.getElementById("danger").innerHTML="DANGER";
+    x=parseInt(bike.style.left)
+    if(x >= 80){
+        document.getElementById("dangermsg").innerHTML="DANGER";
+        dangermsg.style.display = "block";
         clearTimeout(timer);
     }
 }
@@ -38,16 +40,47 @@ function stop(){
 }
 
 function reset(){
-    car.style.left ="2px";
+    bike.style.left ="0%";
 }
 
 
 var names =[];
 var num=[];
 function add(){
-    names.push(document.getElementById("add").value);
-    num.push(document.getElementById("num").value);
-    view();
+     var nameinput = document.getElementById("add").value ;
+     var number    = document.getElementById("num").value ;
+     var len =names.length;
+    //  names.push(nameinput);
+    //  num.push(number);
+    //  view();
+    if(names.length == 0){
+        names.push(nameinput);
+        num.push(number);
+        view(); 
+    }
+    else{
+        for(var a=0;a<len;a++){
+            var x = names[a];
+            var y = num[a];
+        
+        if (x == nameinput){
+                
+            alert("contact name  already exists \n"+names[a]+" - "+num[a]);
+            break ;
+        }
+        else if ( y == number){
+                
+            alert("contact  number already exists \n"+names[a]+" - "+num[a]);
+            break ;
+        }
+        else{
+             names.push(nameinput);
+             num.push(number);
+             view();
+        }
+        }
+    }
+    
 }
 function firstremove(){
     names.shift();
@@ -70,3 +103,4 @@ function view(){
     result += "</ol>";
     document.getElementById("output").innerHTML=result;
 }
+ 
